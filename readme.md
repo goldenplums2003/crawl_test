@@ -1,17 +1,19 @@
 # CaptchaSolver 验证码解决工具
 
+> **注意**: `ask_gpt_captcha`方法当前不可用，请使用`ask_doubao_click_captcha`或`ask_doubao_input_captcha`方法
+
 ## 功能概述
 这个类提供了自动化解决验证码的功能，支持通过ChatGPT和豆包AI解决点击坐标验证码和输入字符验证码。
 
 ## 方法说明
 
-### `ask_gpt_captcha(captcha_img_path, width, height)`
-- 功能：通过ChatGPT解决点击坐标验证码
-- 参数：
-  - captcha_img_path: 验证码图片路径
-  - width: 图片宽度
-  - height: 图片高度
-- 返回：坐标列表，格式如[(x1,y1),(x2,y2)]
+### ~~`ask_gpt_captcha(captcha_img_path, width, height)`~~ (此功能当前不可用)
+- ~~功能：通过ChatGPT解决点击坐标验证码~~
+- ~~参数：~~
+  - ~~captcha_img_path: 验证码图片路径~~
+  - ~~width: 图片宽度~~
+  - ~~height: 图片高度~~
+- ~~返回：坐标列表，格式如[(x1,y1),(x2,y2)]~~
 
 ### `ask_doubao_click_captcha(captcha_img_path)`
 - 功能：通过豆包AI解决点击坐标验证码
@@ -31,11 +33,11 @@
 ```python
 solver = CaptchaSolver()
 
-# 解决点击坐标验证码
+# 解决点击坐标验证码 (使用豆包AI)
 coordinates = solver.ask_doubao_click_captcha('captcha.png')
 print(coordinates)
 
-# 解决字符验证码 
+# 解决字符验证码 (使用豆包AI)
 chars = solver.ask_doubao_input_captcha('char_captcha.png')
 print(chars)
 
@@ -62,13 +64,13 @@ This class provides automated CAPTCHA solving functionality, supporting both coo
 
 ### Methods
 
-#### `ask_gpt_captcha(captcha_img_path, width, height)`
-- Purpose: Solve coordinate-click CAPTCHA using ChatGPT
-- Parameters:
-  - captcha_img_path: Path to CAPTCHA image
-  - width: Image width
-  - height: Image height
-- Returns: List of coordinates in format [(x1,y1),(x2,y2)]
+#### ~~`ask_gpt_captcha(captcha_img_path, width, height)`~~ (Currently unavailable)
+- ~~Purpose: Solve coordinate-click CAPTCHA using ChatGPT~~
+- ~~Parameters:~~
+  - ~~captcha_img_path: Path to CAPTCHA image~~
+  - ~~width: Image width~~
+  - ~~height: Image height~~
+- ~~Returns: List of coordinates in format [(x1,y1),(x2,y2)]~~
 
 #### `ask_doubao_click_captcha(captcha_img_path)`
 - Purpose: Solve coordinate-click CAPTCHA using Doubao AI
@@ -88,11 +90,11 @@ This class provides automated CAPTCHA solving functionality, supporting both coo
 ```python
 solver = CaptchaSolver()
 
-# Solve coordinate CAPTCHA
+# Solve coordinate CAPTCHA (using Doubao AI)
 coordinates = solver.ask_doubao_click_captcha('captcha.png')
 print(coordinates)
 
-# Solve character CAPTCHA
+# Solve character CAPTCHA (using Doubao AI)
 chars = solver.ask_doubao_input_captcha('char_captcha.png')
 print(chars)
 
